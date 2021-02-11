@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Jocul Spanzuratoare</h1>
+<canvas id="myCanvas" width="400" height="300" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+<span style="background: red;font-size: 2em" id="div-negasite">!</span>
+<div id="divcuvant">test</div>
+
+
+<script>
+	// DECLARATII VARIABILE
+	var url = new URL(window.location.href);
+var limba = url.searchParams.get("limba");
+console.log(limba);
+	var dictionar;
+var dictionar_fr=["blagues","amis","coller","conduire","tracteur","chat","réalisateur","football","rugby","basket-ball","enfant","lait","sirop","ferme","chaise","enfant","grand-père","estomac","avion","aéroport","livre","million","sommeil","verre","ampoule","téléphone","ordinateur","TV","brosse","assiette","interdiction","verre","air","virus","café","jus"]
+var dictionar_en=["jokes","friends","paste","drive","tractor","cat","director","football","rugby","basketball","child","milk","syrup","farm","chair","child","grandfather","stomach","airplane","airport","book","million","sleep","glass","bulb","telephone","computer","TV","brush","plate","ban","glass","air","virus","coffee","juice"]
+var dictionar_ro=["glume","prieteni","paste","volan","tractor","pisica","director","fotbal","rugby","baschet","copil","lapte","sirop","ferma","scaun","copil","bunic","stomac","avion","aeroport","carte","milion","somn","geam","bec","telefon","calculator","televizor","perie","farfurie","ban","pahar","aer","virus","cafea","suc"]
+
+if(limba=="english")dictionar=dictionar_en;
+if(limba=="romana")dictionar=dictionar_ro;
+if(limba=="francais")dictionar=dictionar_fr;
+
+
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var cuvint=dictionar[	parseInt(Math.random() * dictionar.length)];
+console.log(cuvint)
+//DECLARATII FUNCTII
+
+function capitol0(){
+/*spânzuràtoare */
+  var yPamant= 290;
+  ctx.moveTo(100,00);
+  ctx.lineTo(100,yPamant);
+  ctx.stroke();
+
+  ctx.moveTo(0,yPamant);
+  ctx.lineTo(200,yPamant);
+  ctx.stroke();
+
+  ctx.moveTo(100,00);
+  ctx.lineTo(200,00);
+  ctx.stroke();
+
+  ctx.moveTo(200,00);
+  ctx.lineTo(200,25);
+  ctx.stroke();
+
+  ctx.moveTo(100,00);
+  ctx.lineTo(200,00);
+  ctx.stroke();
+
+  ctx.moveTo(200,00);
+  ctx.stroke();
+ }
+ 
+ function capitol1(){
+ /* cap*/
+	ctx.beginPath();
+	ctx.arc(200, 50, 25, 0, 2 * Math.PI);
+    
+	ctx.stroke();
+  }
+
+  function capitol2(){
+  /* ochii */
+	ctx.beginPath();
+	ctx.arc(185, 40, 5, 0, 2 * Math.PI);
+    
+	ctx.stroke();
+	ctx.fillStyle = "green";
+	ctx.fill();
+    
+    ctx.beginPath();
+	ctx.arc(215, 40, 5, 0, 2 * Math.PI);
+    
+	ctx.stroke();
+	ctx.fillStyle = "green";
+	ctx.fill();
+}
+
+function capitol3(){
+ /*nas*/	
+    ctx.moveTo(200,50);
+  	ctx.lineTo(200,60);
+  	ctx.stroke();
+ 
+  	ctx.moveTo(206,60);
+  	ctx.lineTo(200,60);
+  	ctx.stroke();
+}
+
+function capitol4(){
+/*gura*/
+ctx.beginPath();
+	ctx.arc(201, 63, 7, 0, 1 * Math.PI);
+    
+	ctx.stroke();
+	ctx.fillStyle = "pink";
+	ctx.fill();
+}    
+
+
+function capitol5(){
+/*gît*/
+	ctx.moveTo(195,75);
+  	ctx.lineTo(195,90);
+  	ctx.stroke();			
+
+ 	ctx.moveTo(211,73);
+  	ctx.lineTo(211,90);
+  	ctx.stroke();
+}
+  
+
+function capitol6(){
+/*corp*/	
+    ctx.rect(175,90,55,100);
+	ctx.stroke();
+}
+
+function capitol7(){
+/*mâna stanga*/ 
+	ctx.moveTo(175,90);
+  	ctx.lineTo(135,180);
+  	ctx.stroke();			
+}
+
+
+function capitol8(){
+/*mâna dreapta*/ 
+ 	ctx.moveTo(230,90);
+  	ctx.lineTo(270,180);
+  	ctx.stroke();
+}
+function capitol9(){
+/*picior stang*/ 	
+    ;ctx.moveTo(175,190);
+  	ctx.lineTo(173,260);
+  	ctx.stroke();
+}
+
+
+function capitol10(){
+/*picior drept*/	
+    ;ctx.moveTo(230,190);
+  	ctx.lineTo(230,260);
+  	ctx.stroke();
+}
+
+
+
+
+// PROGRAM PRINCIPAL
+capitol0();
+/*
+capitol1();
+capitol2();
+capitol3();
+capitol4();
+capitol5();
+capitol6();
+capitol7();
+capitol8();
+capitol9();
+capitol10();
+*/
+var negasite="";
+var gasite="";
+
+function afisare(){
+	var arata="";
+	var i=0;
+	//prima litera >>>>>>>>>>>>>><
+	arata+=cuvint[0];
+	var amGhicitToateLiterele=true;
+	//liniutele
+	for(i=1;  i < cuvint.length-1;  i++){
+		//scrie litera daca o ghicit-o
+		if(gasite.indexOf( cuvint[i] ) != -1){
+			arata+=""+cuvint[i];
+		} else{
+			amGhicitToateLiterele=false;
+		 arata+=" _";}
+	}
+	if(amGhicitToateLiterele) alert("câstigat!!!")
+	//ultima litera
+	i=cuvint.length-1
+	arata+=""+cuvint[i];
+	document.getElementById("divcuvant").innerText=arata;
+}
+afisare();
+
+
+function ghiceste(){
+	var litera=document.getElementById("litera").value;
+	//alert(litera)
+	var gasit = cuvint.indexOf(litera )!= -1;
+	if( gasit ){
+		//l-o gasit
+		///alert("gasit "+litera)
+		gasite+=litera;
+		afisare();
+	}else{
+		//NU l-o gasit
+		negasite+=litera;
+		document.getElementById("div-negasite").innerHTML=negasite;
+		
+		if( negasite.length==1)capitol1();
+		if( negasite.length==2)capitol2();
+		if( negasite.length==3)capitol3();
+		if( negasite.length==4)capitol4();
+		if( negasite.length==5)capitol5();
+		if( negasite.length==6)capitol6();
+		if( negasite.length==7)capitol7();
+		if( negasite.length==8)capitol8();
+		if( negasite.length==9)capitol9();
+		if( negasite.length==10)capitol10();
+		if( negasite.length==10)alert("GAME OVER")
+	}
+}
+//<<<<<<<<<<<<<<<<<<
+</script>
+<br>
+
+<input type="text" id="litera" value="?" />
+<button onclick="ghiceste()">Ghiceste!</button>
+<br><br>
+<button onclick="window.location.reload()">Inca o tura</button>
+</body>
+</html>
