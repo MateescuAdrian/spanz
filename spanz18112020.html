@@ -1,4 +1,15 @@
 
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Jocul Spanzuratoare</h1>
+<canvas id="myCanvas" width="400" height="300" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+<span style="background: red;font-size: 2em" id="div-negasite">!</span>
+<div id="divcuvant">test</div>
+
+
+<script>
 	// DECLARATII VARIABILE
 	var url = new URL(window.location.href);
 var limba = url.searchParams.get("limba");
@@ -176,9 +187,7 @@ function afisare(){
 			amGhicitToateLiterele=false;
 		 arata+=" _";}
 	}
-	if((limba=="english")&&(amGhicitToateLiterele)) alert("won!!!");
-	if((limba=="francais")&&(amGhicitToateLiterele)) alert("gagné!!!");
-	if((limba=="romana")&&(amGhicitToateLiterele)) alert("câstigat!!!")
+	if(amGhicitToateLiterele) alert("câstigat!!!")
 	//ultima litera
 	i=cuvint.length-1
 	arata+=""+cuvint[i];
@@ -215,3 +224,12 @@ function ghiceste(){
 	}
 }
 //<<<<<<<<<<<<<<<<<<
+</script>
+<br>
+
+<input type="text" id="litera" value="?" />
+<button onclick="ghiceste()">Ghiceste!</button>
+<br><br>
+<button onclick="window.location.reload()">Inca o tura</button>
+</body>
+</html>

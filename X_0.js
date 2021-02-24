@@ -1,6 +1,5 @@
-
-	// DECLARATII VARIABILE
-	var url = new URL(window.location.href);
+// DECLARATII VARIABILE
+var url = new URL(window.location.href);
 var limba = url.searchParams.get("limba");
 console.log(limba);
 	var dictionar;

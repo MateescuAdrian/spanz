@@ -1,20 +1,23 @@
 
-	// DECLARATII VARIABILE
-	var url = new URL(window.location.href);
-var limba = url.searchParams.get("limba");
-console.log(limba);
-	var dictionar;
-var dictionar_fr=["blagues","amis","coller","conduire","tracteur","chat","réalisateur","football","rugby","basket-ball","enfant","lait","sirop","ferme","chaise","enfant","grand-père","estomac","avion","aéroport","livre","million","sommeil","verre","ampoule","téléphone","ordinateur","TV","brosse","assiette","interdiction","verre","air","virus","café","jus"]
-var dictionar_en=["jokes","friends","paste","drive","tractor","cat","director","football","rugby","basketball","child","milk","syrup","farm","chair","child","grandfather","stomach","airplane","airport","book","million","sleep","glass","bulb","telephone","computer","TV","brush","plate","ban","glass","air","virus","coffee","juice"]
-var dictionar_ro=["glume","prieteni","paste","volan","tractor","pisica","director","fotbal","rugby","baschet","copil","lapte","sirop","ferma","scaun","copil","bunic","stomac","avion","aeroport","carte","milion","somn","geam","bec","telefon","calculator","televizor","perie","farfurie","ban","pahar","aer","virus","cafea","suc"]
-
-if(limba=="english")dictionar=dictionar_en;
-if(limba=="romana")dictionar=dictionar_ro;
-if(limba=="francais")dictionar=dictionar_fr;
+<!DOCTYPE html>
+<html>
+<body>
+<h1>spanzuratoare / pendu / hangman</h1>
+<canvas id="myCanvas" width="400" height="300" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+<span style="background: red;font-size: 2em" id="div-negasite">!</span>
+<div id="divcuvant">test</div>
 
 
+<script>
 
+
+var dictionar=["glume","prieteni","paste","volan","tractor","pisica","director","fotbal","rugby","baschet","copil","lapte","sirop","ferma","scaun","copil","bunic","stomac","avion","aeroport","carte","milion","somn","geam","bec","telefon","calculator","televizor","perie","farfurie","ban","pahar","aer","virus","cafea","suc"]
+var dictionar_fr=["jeu","ordinateur","chat","avion","pendu","blague","volcan","tracteur","directeur","foot","enfant","lait","sirop","ferme","chaise","papi","aeroport","livre","fenetre","lampe","telefonne"]
+
+// DECLARATII VARIABILE
 var c = document.getElementById("myCanvas");
+var limba="ro";
 var ctx = c.getContext("2d");
 var cuvint=dictionar[	parseInt(Math.random() * dictionar.length)];
 console.log(cuvint)
@@ -176,9 +179,7 @@ function afisare(){
 			amGhicitToateLiterele=false;
 		 arata+=" _";}
 	}
-	if((limba=="english")&&(amGhicitToateLiterele)) alert("won!!!");
-	if((limba=="francais")&&(amGhicitToateLiterele)) alert("gagné!!!");
-	if((limba=="romana")&&(amGhicitToateLiterele)) alert("câstigat!!!")
+	if(amGhicitToateLiterele) alert("câstigat!!!")
 	//ultima litera
 	i=cuvint.length-1
 	arata+=""+cuvint[i];
@@ -215,3 +216,12 @@ function ghiceste(){
 	}
 }
 //<<<<<<<<<<<<<<<<<<
+</script>
+<br>
+
+<input type="text" id="litera" value="?" />
+<button onclick="ghiceste()">Ghiceste!</button>
+<br><br>
+<button onclick="window.location.reload()">Inca o tura</button>
+</body>
+</html>
