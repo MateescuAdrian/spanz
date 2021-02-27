@@ -1,49 +1,75 @@
 <html>
-  
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Adrian's website !</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Adrian's website</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+      </head>
 
-
-
-
-
+      
+    <h1>Hangman</h1>
+     
+    
 <body>
-    <h1>Welcome to www.spanz.fun</h1>
-
-<h2>what do you mant to play?</h2>
-    <label class="mdc-text-field mdc-text-field--filled">
-        <span class="material-icons mdc-fab__icon">games</span>
-    </label>
-    <button class="mdc-fab mdc-fab--extended" onclick="window.location.href = 'home.html';">
-        <div class="mdc-fab__ripple"></div>
-
-        
-        <span class="mdc-fab__label">Hangman</span>
-    </button>
+  <h1>Language/Limba/Langue</h1>
 
 
-    <button class="mdc-fab mdc-fab--extended" onclick="window.location.href = 'multi.html';">
-        <div class="mdc-fab__ripple"></div>
-
-        <span class="material-icons mdc-fab__icon">psychology</span>
-        <span class="mdc-fab__label">multiplication tables</span>
-    </button>
+  
 
 
+  
+  
+  <p>choose your language</p>
+  <p>alegeti limba</p>
+  <p>choisis ta langue</p>
 
+
+  <span class="material-icons mdc-fab__icon">games</span>
+
+  
+  <button class="mdc-fab mdc-fab--extended" 
+  onclick="window.location.href = 'spanzen.html?limba=english';" >
+    <div class="mdc-fab__ripple"></div>
+ 
+    <span class="material-icons mdc-fab__icon">language</span>
+    <span class="mdc-fab__label">ENGLISH</span>
+  </button>
+</li>
+  
+    
+<button class="mdc-fab mdc-fab--extended" 
+  onclick="window.location.href = 'spanzro.html?limba=romana';" >
+    <div class="mdc-fab__ripple"></div>
+ 
+    <span class="material-icons mdc-fab__icon">language</span>
+    <span class="mdc-fab__label">ROMÂNĂ</span>
+  </button>
+
+
+  <button class="mdc-fab mdc-fab--extended" 
+  onclick="window.location.href = 'spanzfr.html?limba=francais';" >
+    <div class="mdc-fab__ripple"></div>
+ 
+    <span class="material-icons mdc-fab__icon">language</span>
+    <span class="mdc-fab__label">FRANÇAIS</span>
+  </button>
+
+  
+   
+    
+   
     <img src="https://image.freepik.com/free-vector/letter-s-logo-vector_23987-294.jpg">
+      
+      
+   
+     
+   
+  </ul>
+  <script>mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-text-field'));</script>
 
-
-    <script>mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-text-field'));</script>
-
-
+  </div> 
 </body>
-
 </html>
