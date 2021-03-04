@@ -1,4 +1,14 @@
 <html>
+
+
+    <button class="mdc-fab mdc-fab--extended" onclick="window.location.href = 'home.html';">
+        
+        <span class="material-icons mdc-fab__icon">arrow_back_ios_new</span>
+        
+    </button>
+
+
+
 <head>
 
 
@@ -83,14 +93,12 @@ function generate(){
     }
 }
 
- 
-
-
-
-
 
 </script>
+
+
 </head>
+
 <body onload="t_minus_unu();generate()">
     <h1>Multiplication tables</h1>
     <h2>Elapsed Time: <span id="span_sec">0</span> seconds</h2>
@@ -99,13 +107,39 @@ function generate(){
     <br><br>
     <h1 id="multi"></h1>
     <div>
-        <button id="v1" onclick="ghicit('v1')" style="font-size: large;">a</button>
+
+
+        <button class="mdc-fab mdc-fab--extended" onclick="ghicit('v1')">
+            <div class="mdc-fab__ripple"></div>
+    
+            
+            <span id="v1" class="mdc-fab__label"></span>
+        </button>
+
+        
+        <button class="mdc-fab mdc-fab--extended" onclick="ghicit('v2')">
+            <div class="mdc-fab__ripple"></div>
+    
+            
+            <span id="v2" class="mdc-fab__label"></span>
+        </button>
+
+
+
+        <button class="mdc-fab mdc-fab--extended" onclick="ghicit('v3')">
+            <div class="mdc-fab__ripple"></div>
+    
+            
+            <span id="v3" class="mdc-fab__label"></span>
+        </button>
+
+
     </div><br></br>
     <div>
-        <button id="v2"  onclick="ghicit('v2')" style="font-size: large;">a</button>
+        
     </div><br></br>
     <div>
-        <button id="v3"  onclick="ghicit('v3')" style="font-size: large;">a</button>
+       
     </div>
 
     <br>
